@@ -21,8 +21,13 @@ public class MedicoControlador {
     }
 
     @PostMapping("/agregar")
-    public Medico guardarPaciente(@RequestBody Medico paciente){
-        return medicoServicio.guardarMedico(paciente);
+    public Medico guardarMedico(@RequestBody Medico medico){
+        return medicoServicio.guardarMedico(medico);
+    }
+
+    @PostMapping("/actualizar")
+    public Medico actualizarMedico(@RequestBody Medico medico){
+        return medicoServicio.guardarMedico(medico);
     }
 
     @GetMapping(path = "/{id}")

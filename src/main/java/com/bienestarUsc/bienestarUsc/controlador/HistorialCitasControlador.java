@@ -25,6 +25,11 @@ public class HistorialCitasControlador {
         return historialCitasServicio.guardarCita(historialCitas);
     }
 
+    @PostMapping("/actualizar")
+    public HistorialCitas actualizarCita(@RequestBody HistorialCitas historialCitas){
+        return historialCitasServicio.guardarCita(historialCitas);
+    }
+
     @GetMapping(path = "/{id}")
     public Optional<HistorialCitas> obtenerPorId(@PathVariable("id") Integer id){
         return historialCitasServicio.obtenerPorId(id);

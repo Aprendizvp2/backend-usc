@@ -25,6 +25,11 @@ public class PacienteControlador {
         return pacienteServicio.guardarPaciente(paciente);
     }
 
+    @PostMapping("/actualizar")
+    public Paciente actualizarPaciente(@RequestBody Paciente paciente){
+        return pacienteServicio.guardarPaciente(paciente);
+    }
+
     @GetMapping(path = "/{id}")
     public Optional<Paciente> obtenerPorId(@PathVariable("id") Integer id){
         return pacienteServicio.obtenerPorId(id);
