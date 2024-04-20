@@ -35,8 +35,8 @@ public class PacienteControlador {
         return pacienteServicio.obtenerPorId(id);
     }
 
-    @DeleteMapping("/eliminar")
-    public String eliminarPorId(@RequestParam("id") Integer id){
+    @DeleteMapping(path = "/eliminar/{id}")
+    public String eliminarPorId(@PathVariable("id") Integer id){
         boolean eliminado = pacienteServicio.eliminarPorId(id);
         if (eliminado) {
             return "Registro eliminado";
