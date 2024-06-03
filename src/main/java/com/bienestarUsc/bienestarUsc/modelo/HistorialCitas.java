@@ -13,17 +13,16 @@ public class HistorialCitas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    
+    private String estado;
 
-    private Date fecha;
-    private String tipoCita;
-    private String descripcion;
-    private String medicamentos;
+    @ManyToOne
+    @JoinColumn(name="cita_id")
+    private CitasDisponibles citaId;
 
     @ManyToOne
     @JoinColumn(name="paciente_id")
     private Paciente pacienteId;
 
-    @ManyToOne
-    @JoinColumn(name="medico_id")
-    private Medico medicoId;
+    
 }

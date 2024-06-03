@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/pacientes")
+@CrossOrigin("*")
 public class PacienteControlador {
     @Autowired
     private PacienteServicio pacienteServicio;
@@ -18,6 +19,11 @@ public class PacienteControlador {
     @GetMapping("/")
     public List<Paciente> mostrarPacientes(){
         return pacienteServicio.mostrarPacientes();
+    }
+    
+    @GetMapping("")
+    public List<Paciente> mostrarPorEmail(@RequestParam("email")String email){
+        return pacienteServicio.mostrarPorEmail(email);
     }
 
     @PostMapping("/agregar")

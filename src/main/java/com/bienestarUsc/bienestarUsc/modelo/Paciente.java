@@ -20,7 +20,6 @@ public class Paciente implements Serializable{
     @Column(unique = true)
     private Integer numeroDocumento;
 
-    private Date fechaNacimiento;
     private String genero;
     private String telefono;
     private String email;

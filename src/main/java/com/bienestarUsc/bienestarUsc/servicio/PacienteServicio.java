@@ -17,6 +17,10 @@ public class PacienteServicio {
     public List<Paciente> mostrarPacientes(){
         return (List<Paciente>) pacienteRepo.findAll();
     }
+    
+    public List<Paciente> mostrarPorEmail(String email){
+        return pacienteRepo.findByEmail(email);
+    }
 
     public Paciente guardarPaciente(Paciente paciente){
         return pacienteRepo.save(paciente);
