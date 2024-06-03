@@ -11,6 +11,7 @@ import com.bienestarUsc.bienestarUsc.servicio.MedicoServicio;
 
 @RestController
 @RequestMapping("/medicos")
+@CrossOrigin("*")
 public class MedicoControlador {
     @Autowired
     private MedicoServicio medicoServicio;

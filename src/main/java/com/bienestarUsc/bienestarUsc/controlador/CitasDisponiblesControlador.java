@@ -16,9 +16,9 @@ public class CitasDisponiblesControlador {
     @Autowired
     private CitasDisponiblesServicio citasDisponiblesServicio;
 
-    @GetMapping("/")
-    public List<CitasDisponibles> mostrarCitas(){
-        return citasDisponiblesServicio.mostrarCitas();
+    @GetMapping("")
+    public List<CitasDisponibles> mostrarCitas(@RequestParam("tipoCita") String tipoCita, @RequestParam("disponible") Integer disponible){
+        return citasDisponiblesServicio.mostrarCitas(tipoCita, disponible);
     }
 
     @GetMapping(path = "/{id}")

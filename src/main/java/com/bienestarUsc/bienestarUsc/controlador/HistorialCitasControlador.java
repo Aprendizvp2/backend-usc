@@ -6,18 +6,19 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.bienestarUsc.bienestarUsc.modelo.HistorialCitas;
+import com.bienestarUsc.bienestarUsc.modelo.*;
 import com.bienestarUsc.bienestarUsc.servicio.HistorialCitasServicio;
 
 @RestController
 @RequestMapping("/historialCitas")
+@CrossOrigin("*")
 public class HistorialCitasControlador {
     @Autowired
     private HistorialCitasServicio historialCitasServicio;
 
-    @GetMapping("/")
-    public List<HistorialCitas> mostrarHistorialCitas(){
-        return historialCitasServicio.mostrarHistorialCitas();
+    @GetMapping("")
+    public List<HistorialCitas> mostrarPorPaciente(@RequestParam("paciente") Paciente pacienteId){
+        return historialCitasServicio.mostrarPorPaciente(pacienteId);
     }
 
     @PostMapping("/agregar")

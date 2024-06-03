@@ -13,8 +13,12 @@ public class CitasDisponiblesServicio {
     @Autowired
     private CitasDisponiblesRepositorio citasDisponiblesRepo;
 
-    public List<CitasDisponibles> mostrarCitas(){
-        return (List<CitasDisponibles>) citasDisponiblesRepo.findAll();
+//    public List<CitasDisponibles> mostrarCitas(){
+//        return (List<CitasDisponibles>) citasDisponiblesRepo.findAll();
+//    }
+    
+    public List<CitasDisponibles> mostrarCitas(String tipoCita, int disponible){
+        return (List<CitasDisponibles>) citasDisponiblesRepo.findByTipoCitaAndDisponible(tipoCita, disponible);
     }
 
     public CitasDisponibles guardarNuevaCita(CitasDisponibles citasDisponibles){

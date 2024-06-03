@@ -1,5 +1,6 @@
 package com.bienestarUsc.bienestarUsc.modelo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.sql.*;
 
@@ -14,8 +15,11 @@ public class CitasDisponibles implements Serializable{
     private Integer id;
 
     private Date fecha;
+    
+    @JsonFormat(pattern = "HH:mm")
     private Time hora;
     private String tipoCita;
+    private Integer disponible;
 
     @ManyToOne
     @JoinColumn(name="medico_id")
